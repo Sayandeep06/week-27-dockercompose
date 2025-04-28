@@ -1,119 +1,111 @@
-
-
 # Manual Installation Guide
 
 ## Steps to Set Up the Project
 
-1. **Install Node.js locally**
-   Make sure you have Node.js installed on your machine. [Download Node.js](https://nodejs.org/)
+1\. **Install Node.js locally**  
 
-2. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd <your-project-folder>
-```
+ Make sure you have Node.js installed on your machine. [Download Node.js](https://nodejs.org/)
 
-1.  **Install dependencies**
+2\. **Clone the repository**
 
-```
+ ```bash
+
+ git clone <your-repo-url>
+
+ cd <your-project-folder>
+
+3.  Install dependencies
+
 npm install
-```
 
-1.
+4.  Set up the environment
 
-2.  **Set up the environment**
+-  Create a .env file based on the .env.example if provided.
 
-    -   Create a .env file based on the .env.example if provided.
+-  Configure your database connection URL inside .env.
 
-    -   Configure your database connection URL inside .env.
+5.  Start your local database
 
-3.  **Start your local database**
+(You can also use hosted databases like Neon).
 
-    (You can also use hosted databases like [Neon](https://neon.tech)).
+6.  Get a Database
 
-4.  **Get a Database**
+-  Go to neon.tech and create a free PostgreSQL database.
 
-    -   Go to [neon.tech](https://neon.tech) and create a free PostgreSQL database.
+-  Copy the connection URL and paste it into your .env file.
 
-    -   Copy the connection URL and paste it into your .env file.
+7.  Run database migrations
 
-5.  **Run database migrations**
-
-```
 npx prisma migrate dev
-```
 
-1.
+8.  Generate Prisma Client
 
-2.  **Generate Prisma Client**
-
-```
 npx prisma generate
-```
 
-1.
+9.  Build the project
 
-2.  **Build the project**
-
-```
 npm run build
-```
 
-1.
+10.  Start the project
 
-2.  **Start the project**
-
-```
 npm run start
-```
 
-* * * * *
+⸻
 
-**Project Structure**
----------------------
+Project Structure
 
-```
 /src
-  index.ts
+
+ index.ts
+
 /prisma
-  schema.prisma
+
+ schema.prisma
+
 .gitignore
+
 .env
+
 package.json
+
 package-lock.json
+
 tsconfig.json
+
 Contribute.md
-```
 
-* * * * *
+⸻
 
-**Notes**
----------
+Notes
 
--   Make sure your PostgreSQL database is live and accessible.
+-  Make sure your PostgreSQL database is live and accessible.
 
--   If you change your Prisma schema, always re-run:
+-  If you change your Prisma schema, always re-run:
 
-```
 npx prisma generate
 
-```
+⸻
 
-## Docker installation 
-- Install DOcker 
-- Start postgres 
-- `docker run -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres`
-- Build the image 
-- Start the image
+Docker Installation
 
+-  Install Docker.
 
-## Docker compose
-- Install Docker, Docker compose 
-- Run `docker-compose up`
+-  Start PostgreSQL:
 
-* * * * *
+docker run -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 
-```
----
+-  Build the image.
 
-```
+-  Start the image.
+
+⸻
+
+Docker Compose
+
+-  Install Docker and Docker Compose.
+
+-  Run:
+
+docker-compose up
+
+⸻

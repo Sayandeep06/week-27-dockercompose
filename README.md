@@ -1,5 +1,5 @@
 
-```
+
 # Manual Installation Guide
 
 ## Steps to Set Up the Project
@@ -96,7 +96,20 @@ Contribute.md
 
 ```
 npx prisma generate
+
 ```
+
+## Docker installation 
+- Install DOcker 
+- Start postgres 
+- `docker run -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres`
+- Build the image 
+- Start the image
+
+
+## Docker compose
+- Install Docker, Docker compose 
+- Run `docker-compose up`
 
 * * * * *
 

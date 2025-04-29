@@ -1,18 +1,19 @@
-FROM node:23-alpine 
+FROM node:23-alpine
 
 WORKDIR /app
 
-COPY ./package.json ./package.json 
-COPY ./package-lock.json ./package-lock.json
+COPY package.json package-lock.json ./
 
-RUN npm install 
+RUN npm install
 
 COPY . .
 
-ENV DATABASE_URL="postgresql://postgres:mysecretpasseoejd@localhost:5432/postgres"
+ENV DATABASE_URL="postgresql://postgres:mysecretpassword@host.docker.internal:5432/postgres"
 
-RUN npx prisma migrate dev
-RUN npx prisma generate 
-RUN npm run build 
+RUN npx prisma generate
 
-CMD ["npm", "start"]
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev:docker"]

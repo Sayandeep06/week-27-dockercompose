@@ -1,14 +1,11 @@
 {
   "name": "week-27-dockercompose",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "dev:docker": "npx prisma migrate dev --name init && node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "@types/express": "^5.0.1",
